@@ -64,8 +64,8 @@ var Add2List = (name, url)=>{
     // </div>
     pokemonDiv.appendChild(card);
 
-}// Function to show the modal with Pokémon details
-// Function to show the modal with Pokémon details
+}
+// Function to show the modal with Pokemon details
 var showDetails = (name) => {
   fetch(`https://pokeapi.co/api/v2/pokemon/${name}/`)
     .then(response => {
@@ -73,7 +73,7 @@ var showDetails = (name) => {
         return response.json();
     })
     .then(pokemonDetails => {
-      // Display Pokémon details in the modal
+      // Display Pokemon details in the modal
       var modal = new bootstrap.Modal(document.getElementById("pokemonModal"));
       var modalTitle = document.getElementById("modalTitle");
       var modalImage = document.getElementById("modalImage");
@@ -82,7 +82,7 @@ var showDetails = (name) => {
       modalTitle.innerText = name;
       modalTitle.setAttribute("class", "title-center");
       modalImage.setAttribute("src", pokemonDetails.sprites.front_default);
-      // Customize how you want to display the Pokémon details here
+      // Customize how you want to display the Pokemon details here
       var filteredStats = pokemonDetails.stats.filter(stat => {
         return ["hp", "attack", "defense", "speed"].includes(stat.stat.name);
       });
