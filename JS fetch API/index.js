@@ -114,7 +114,7 @@ var showDetails = (name) => {
       modal.show();
     })
     .catch(error => {
-      console.log("Can't fetch Pokémon details from the API.");
+      console.log("Can't fetch Pokemon details from the API.");
     });
 };
 
